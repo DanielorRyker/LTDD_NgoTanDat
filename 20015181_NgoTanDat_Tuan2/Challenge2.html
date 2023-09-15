@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function calBMI(height, weight) {
+            height = height / 100;
+            var BMI = weight / (height * height);
+            BMI = BMI.toFixed(2);
+            return BMI;
+        }
+
+
+        var height = 176;
+        var weight = 80;
+        var BMI_Mark = calBMI(height, weight);
+        console.log("BMI của Mark là: " + BMI_Mark);
+
+        var height = 195;
+        var weight = 80;
+        var BMI_John = calBMI(height, weight);
+        console.log("BMI của John là: " + BMI_John);
+
+
+        var Boolean = markHigherBMI = BMI_Mark > BMI_John;
+        if (Boolean) {
+            console.log("Chỉ số BMI của Mark (" + BMI_Mark + ") cao hơn John (" + BMI_John + ")!");
+        } else {
+            console.log("Chỉ số BMI của John (" + BMI_John + ") cao hơn Mark (" + BMI_Mark + ")!");
+        }
+    </script>
+</body>
+
+</html>
