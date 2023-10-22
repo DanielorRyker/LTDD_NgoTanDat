@@ -5,44 +5,44 @@ const array = [
     {
         img: require("./assets/listBike/bifour_-removebg-preview (1).png"),
         name: "Pinarello",
-        price: "$ 1800",
+        price: 1800,
     },
 
     {
         img: require("./assets/listBike/bitwo-removebg-preview.png"),
         name: "Pina Mountai",
-        price: "$ 1700",
+        price: 1700,
     },
 
     {
         img: require("./assets/listBike/bithree_removebg-preview.png"),
         name: "Pina Bike",
-        price: "$ 1500",
+        price: 1500,
     },
 
     {
         img: require("./assets/listBike/bione-removebg-preview.png"),
         name: "Pinarello",
-        price: "$ 1900",
+        price: 1900,
     },
 
     {
         img: require("./assets/listBike/bithree_removebg-preview.png"),
         name: "Pinarello",
-        price: "$ 2700",
+        price: 2700,
     },
 
     {
         img: require("./assets/listBike/bitwo-removebg-preview.png"),
         name: "Pinarello",
-        price: "$ 1350",
+        price: 1350,
     },
 ]
 
 
 
-export default function BikeListScreen() {
-    const navigation = useNavigation();
+export default function BikeListScreen({ navigation}) {
+    // const navigation = useNavigation();
     
     return (
         <View style={styles.container}>
@@ -69,11 +69,11 @@ export default function BikeListScreen() {
                     renderItem = {({item}) => {
                         return (
                             <TouchableOpacity style={styles.itemContainer}
-                                onPress={() => navigation.navigate("DetailItem")}
+                                onPress={() => navigation.navigate("DetailItem", item)}
                             >
                                  <Image style={styles.itemImg} source={item.img}/>
                                 <Text style={styles.itemName}>{item.name}</Text>
-                                <Text style={styles.itemPrice}>{item.price}</Text>
+                                <Text style={styles.itemPrice}>$ {item.price}</Text>
                             </TouchableOpacity>
                         );
                     }}
