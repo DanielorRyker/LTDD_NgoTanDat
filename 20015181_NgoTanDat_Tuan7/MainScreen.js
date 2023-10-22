@@ -12,7 +12,9 @@ export default function MainScreen({ navigation }) {
         <Text style={styles.title}>
             POWER BIKE <br/> SHOP
         </Text>
-        <TouchableOpacity style= {styles.btnStart}>
+        <TouchableOpacity style= {styles.btnStart}
+        onPress={() => navigation.navigate("BikeListScreen")}
+        >
             <Text style={styles.btnStartText}>Get Started</Text>
         </TouchableOpacity>
         </View>
